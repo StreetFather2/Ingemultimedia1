@@ -10,20 +10,20 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-      color: #333333;
+      background-color: #121212;
+      color: #e0e0e0;
       line-height: 1.6;
       text-align: center;
     }
 
     header {
-      background-color: #333333;
+      background-color: #000000;
       color: #ffffff;
       padding: 20px;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       margin: 0;
     }
 
@@ -34,26 +34,27 @@
 
     /* Menú de navegación */
     nav {
-      background-color: #ffffff;
+      background-color: #1e1e1e;
       display: flex;
       justify-content: center;
       padding: 10px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: #333333;
+      color: #ffffff;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 10px;
       font-weight: bold;
       transition: color 0.3s ease;
-      border: 1px solid #333333;
+      border: 1px solid #ffffff;
       padding: 10px 15px;
       border-radius: 25px;
     }
 
     nav a:hover {
-      background-color: #333333;
-      color: #ffffff;
+      background-color: #ffffff;
+      color: #000000;
     }
 
     /* Contenedor principal */
@@ -70,14 +71,14 @@
     }
 
     section h2 {
-      color: #333333;
-      font-size: 2rem;
+      color: #ffffff;
+      font-size: 1.8rem;
       margin-bottom: 20px;
     }
 
     section p {
       font-size: 1rem;
-      color: #333333;
+      color: #e0e0e0;
     }
 
     /* Rectángulos para imágenes */
@@ -91,14 +92,14 @@
     .image-box {
       width: 199px;
       height: 353px;
-      background-color: #cccccc;
+      background-color: #333333;
       border: 2px solid #ffffff;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      color: #333333;
+      color: #e0e0e0;
       border-radius: 15px;
       overflow: hidden;
       position: relative;
@@ -118,7 +119,7 @@
     .image-description {
       margin-top: 10px;
       font-size: 0.9rem;
-      color: #555555;
+      color: #cccccc;
     }
 
     /* Modal */
@@ -129,7 +130,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.9);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -145,12 +146,12 @@
       max-width: 60%;
       max-height: 80%;
       border: 5px solid #ffffff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     }
 
     .modal-text {
-      background-color: #ffffff;
-      color: #333333;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
       padding: 20px;
       border-radius: 15px;
       margin-left: 20px;
@@ -163,7 +164,7 @@
 
     /* Pie de página */
     footer {
-      background-color: #333333;
+      background-color: #000000;
       color: #ffffff;
       text-align: center;
       padding: 10px;
@@ -172,6 +173,23 @@
 
     footer p {
       margin: 5px 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .modal img {
+        max-width: 80%;
+      }
+
+      .modal-text {
+        max-width: 80%;
+        margin-left: 0;
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
@@ -199,21 +217,21 @@
     <section id="historia">
       <h2>Historia de la Ingeniería</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://i.ytimg.com/vi/gpwBpyj_WV0/maxresdefault.jpg', 'Historia de la Ingeniería', 'La ingeniería ha evolucionado desde las construcciones antiguas hasta las innovaciones modernas.')">
+        <div class="image-box" onclick="openModal('https://i.ytimg.com/vi/gpwBpyj_WV0/maxresdefault.jpg', 'Historia de la Ingeniería', 'La ingeniería ha evolucionado desde las construcciones antiguas hasta las innovaciones modernas. Desde las pirámides de Egipto hasta los rascacielos contemporáneos, la ingeniería ha sido fundamental para el desarrollo humano.')">
           <img src="https://i.ytimg.com/vi/gpwBpyj_WV0/maxresdefault.jpg" alt="Historia de la Ingeniería">
         </div>
         <div class="image-description">Historia de la Ingeniería</div>
-        <div class="image-box" onclick="openModal('https://grupocarman.com/blog/wp-content/uploads/2019/04/historia-mecanica-1024x768.jpg', 'Historia de la Ingeniería', 'La ingeniería mecánica ha sido clave en el desarrollo industrial.')">
-          <img src="https://grupocarman.com/blog/wp-content/uploads/2019/04/historia-mecanica-1024x768.jpg" alt="Historia de la Ingeniería">
+        <div class="image-box" onclick="openModal('https://grupocarman.com/blog/wp-content/uploads/2019/04/historia-mecanica-1024x768.jpg', 'Historia de la Ingeniería Mecánica', 'La ingeniería mecánica se remonta a la antigua Grecia, donde se desarrollaron máquinas simples como la palanca y la polea. Hoy en día, es una disciplina clave en la industria.')">
+          <img src="https://grupocarman.com/blog/wp-content/uploads/2019/04/historia-mecanica-1024x768.jpg" alt="Historia de la Ingeniería Mecánica">
         </div>
-        <div class="image-description">Historia de la Ingeniería</div>
+        <div class="image-description">Historia de la Ingeniería Mecánica</div>
       </div>
     </section>
 
     <section id="origen">
       <h2>Origen de la Palabra "Ingeniero"</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://etimologia.com/foto/historia/ingeniero-robotica.jpg', 'Origen de la Palabra Ingeniero', 'El término ingeniero tiene sus raíces en el latín y evolucionó con el tiempo.')">
+        <div class="image-box" onclick="openModal('https://etimologia.com/foto/historia/ingeniero-robotica.jpg', 'Origen de la Palabra Ingeniero', 'La palabra "ingeniero" proviene del latín "ingenium", que significa ingenio o habilidad. A lo largo de los siglos, esta profesión ha evolucionado para abarcar diversas disciplinas.')">
           <img src="https://etimologia.com/foto/historia/ingeniero-robotica.jpg" alt="Origen de la Palabra Ingeniero">
         </div>
         <div class="image-description">Origen de la Palabra Ingeniero</div>
@@ -223,7 +241,7 @@
     <section id="significado">
       <h2>¿Qué Significa Ser un Ingeniero?</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://i.pinimg.com/736x/6d/32/a0/6d32a07850129821c04c347170e96c11.jpg', 'Significado de Ser Ingeniero', 'Ser ingeniero implica creatividad, conocimiento y compromiso con el bienestar social.')">
+        <div class="image-box" onclick="openModal('https://i.pinimg.com/736x/6d/32/a0/6d32a07850129821c04c347170e96c11.jpg', 'Significado de Ser Ingeniero', 'Ser ingeniero implica creatividad, conocimiento técnico y compromiso con el bienestar social. Los ingenieros resuelven problemas complejos y diseñan soluciones innovadoras.')">
           <img src="https://i.pinimg.com/736x/6d/32/a0/6d32a07850129821c04c347170e96c11.jpg" alt="Significado de Ser Ingeniero">
         </div>
         <div class="image-description">Significado de Ser Ingeniero</div>
@@ -233,7 +251,7 @@
     <section id="funciones">
       <h2>Funciones Principales del Ingeniero</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://curriculumya.com/uploads/img/que-hace-ingeniero.jpg', 'Funciones del Ingeniero', 'Los ingenieros diseñan, supervisan y mejoran sistemas y procesos.')">
+        <div class="image-box" onclick="openModal('https://curriculumya.com/uploads/img/que-hace-ingeniero.jpg', 'Funciones del Ingeniero', 'Las funciones principales de un ingeniero incluyen el diseño, la planificación, la supervisión y la optimización de sistemas y procesos. Además, deben garantizar la seguridad y eficiencia de sus proyectos.')">
           <img src="https://curriculumya.com/uploads/img/que-hace-ingeniero.jpg" alt="Funciones del Ingeniero">
         </div>
         <div class="image-description">Funciones del Ingeniero</div>
@@ -243,7 +261,7 @@
     <section id="caracteristicas">
       <h2>Características de un Ingeniero</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://scontent.fppn2-1.fna.fbcdn.net/v/t39.30808-6/470237167_3032871220186430_7531586987902369727_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WBHXEHZcezMQ7kNvgEW0udT&_nc_oc=Adip0rb2oQLo82trDKS_xk0nMTJQ9CzUOYY_i6tR4cYPhnZ8ue_NfoBNRthqVe8VZNc&_nc_zt=23&_nc_ht=scontent.fppn2-1.fna&_nc_gid=ARR5ffmbS1K2eoCNoOdqzTZ&oh=00_AYCmEHl-BzVsTJGIcREPXDvNu5qmhnN_1wi65BtgNymnVg&oe=67B0E168', 'Características del Ingeniero', 'Un ingeniero debe ser creativo, ético y adaptable a los cambios.')">
+        <div class="image-box" onclick="openModal('https://scontent.fppn2-1.fna.fbcdn.net/v/t39.30808-6/470237167_3032871220186430_7531586987902369727_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WBHXEHZcezMQ7kNvgEW0udT&_nc_oc=Adip0rb2oQLo82trDKS_xk0nMTJQ9CzUOYY_i6tR4cYPhnZ8ue_NfoBNRthqVe8VZNc&_nc_zt=23&_nc_ht=scontent.fppn2-1.fna&_nc_gid=ARR5ffmbS1K2eoCNoOdqzTZ&oh=00_AYCmEHl-BzVsTJGIcREPXDvNu5qmhnN_1wi65BtgNymnVg&oe=67B0E168', 'Características del Ingeniero', 'Un ingeniero debe ser creativo, ético, adaptable y poseer habilidades técnicas avanzadas. Además, debe trabajar en equipo y mantenerse actualizado en su campo.')">
           <img src="https://scontent.fppn2-1.fna.fbcdn.net/v/t39.30808-6/470237167_3032871220186430_7531586987902369727_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WBHXEHZcezMQ7kNvgEW0udT&_nc_oc=Adip0rb2oQLo82trDKS_xk0nMTJQ9CzUOYY_i6tR4cYPhnZ8ue_NfoBNRthqVe8VZNc&_nc_zt=23&_nc_ht=scontent.fppn2-1.fna&_nc_gid=ARR5ffmbS1K2eoCNoOdqzTZ&oh=00_AYCmEHl-BzVsTJGIcREPXDvNu5qmhnN_1wi65BtgNymnVg&oe=67B0E168" alt="Características del Ingeniero">
         </div>
         <div class="image-description">Características del Ingeniero</div>
@@ -253,7 +271,7 @@
     <section id="papel">
       <h2>Papel en la Sociedad</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://virtual.cuc.edu.co/hs-fs/hubfs/habilidades-clave-de-un-ingeniero-industrial%20.jpg?width=800&height=500&name=habilidades-clave-de-un-ingeniero-industrial%20.jpg', 'Papel en la Sociedad', 'Los ingenieros contribuyen al progreso social y económico.')">
+        <div class="image-box" onclick="openModal('https://virtual.cuc.edu.co/hs-fs/hubfs/habilidades-clave-de-un-ingeniero-industrial%20.jpg?width=800&height=500&name=habilidades-clave-de-un-ingeniero-industrial%20.jpg', 'Papel en la Sociedad', 'Los ingenieros juegan un papel crucial en el desarrollo sostenible y el progreso tecnológico. Contribuyen a resolver problemas globales como el cambio climático y la escasez de recursos.')">
           <img src="https://virtual.cuc.edu.co/hs-fs/hubfs/habilidades-clave-de-un-ingeniero-industrial%20.jpg?width=800&height=500&name=habilidades-clave-de-un-ingeniero-industrial%20.jpg" alt="Papel en la Sociedad">
         </div>
         <div class="image-description">Papel en la Sociedad</div>
@@ -265,52 +283,4 @@
     <section id="actividades">
       <h2>Actividades y Sectores Económicos</h2>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://micarrerauniversitaria.com/wp-content/uploads/2018/02/Mapa-Mental-1-768x553.jpg', 'Actividades y Sectores Económicos', 'Los ingenieros participan en múltiples actividades económicas.')">
-          <img src="https://micarrerauniversitaria.com/wp-content/uploads/2018/02/Mapa-Mental-1-768x553.jpg" alt="Actividades y Sectores Económicos">
-        </div>
-        <div class="image-description">Actividades y Sectores Económicos</div>
-      </div>
-      <p>Video relacionado:</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/abcdef12345" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
-  </div>
-
-  <!-- Modal -->
-  <div id="myModal" class="modal" onclick="closeModal()">
-    <div class="modal-content">
-      <img id="modalImage" src="" alt="Imagen Ampliada">
-      <div class="modal-text">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDescription"></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pie de página -->
-  <footer>
-    <p>Creado por MALKON ALVAREZ</p>
-    <p>Estudiante de Ingeniería Multimedia</p>
-    <p>Grupo 202456784_35</p>
-  </footer>
-
-  <script>
-    function openModal(imageSrc, title, description) {
-      const modal = document.getElementById('myModal');
-      const modalImage = document.getElementById('modalImage');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalDescription = document.getElementById('modalDescription');
-
-      modalImage.src = imageSrc;
-      modalTitle.textContent = title;
-      modalDescription.textContent = description;
-
-      modal.style.display = 'flex';
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('myModal');
-      modal.style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+        <div class="image-box" onclick="openModal('https://micarrerauniversitaria.com/wp-content/uploads/2018/02/Mapa-Mental-1-768x553.jpg', 'Actividades y Sectores Económicos', 'Los ingenieros trabajan en diversos sectores económicos, como la construcción, la
