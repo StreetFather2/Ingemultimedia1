@@ -10,14 +10,14 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
+      background-color: #f5f5f5;
       color: #333333;
       line-height: 1.6;
       text-align: center;
     }
 
     header {
-      background-color: #0074D9;
+      background-color: #333333;
       color: #ffffff;
       padding: 20px;
     }
@@ -41,20 +41,24 @@
     }
 
     nav a {
-      color: #0074D9;
+      color: #333333;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
       transition: color 0.3s ease;
+      border: 1px solid #333333;
+      padding: 10px 15px;
+      border-radius: 25px;
     }
 
     nav a:hover {
-      color: #0056b3;
+      background-color: #333333;
+      color: #ffffff;
     }
 
     /* Contenedor principal */
     .container {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -62,11 +66,11 @@
     /* Contenido principal */
     section {
       padding: 40px 0;
-      border-bottom: 1px solid #0074D9;
+      border-bottom: 1px solid #333333;
     }
 
     section h2 {
-      color: #0074D9;
+      color: #333333;
       font-size: 2rem;
       margin-bottom: 20px;
     }
@@ -78,31 +82,46 @@
 
     /* Rectángulos para imágenes */
     .image-container {
-      display: flex;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(199px, 1fr));
+      gap: 40px;
       margin: 20px 0;
     }
 
     .image-box {
-      width: 150px;
-      height: 250px;
-      background-color: #0074D9;
+      width: 199px;
+      height: 353px;
+      background-color: #cccccc;
       border: 2px solid #ffffff;
-      margin: 0 10px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      color: #ffffff;
+      color: #333333;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
       transition: transform 0.3s ease;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .image-box:hover {
       transform: scale(1.1);
     }
 
-    /* Modal para imágenes */
+    .image-description {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555555;
+    }
+
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -116,16 +135,35 @@
       align-items: center;
     }
 
+    .modal-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .modal img {
-      max-width: 80%;
+      max-width: 60%;
       max-height: 80%;
       border: 5px solid #ffffff;
-      box-shadow: 0 0 20px rgba(0, 116, 217, 0.5);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-text {
+      background-color: #ffffff;
+      color: #333333;
+      padding: 20px;
+      border-radius: 15px;
+      margin-left: 20px;
+      max-width: 30%;
+    }
+
+    .modal-text h3 {
+      margin-top: 0;
     }
 
     /* Pie de página */
     footer {
-      background-color: #0074D9;
+      background-color: #333333;
       color: #ffffff;
       text-align: center;
       padding: 10px;
@@ -160,70 +198,92 @@
     <!-- Contenido principal -->
     <section id="historia">
       <h2>Historia de la Ingeniería</h2>
-      <p>Desde las pirámides de Egipto hasta los avances tecnológicos modernos, la ingeniería ha sido fundamental para el desarrollo humano.</p>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 2</div>
+        <div class="image-box" onclick="openModal('https://i.ytimg.com/vi/gpwBpyj_WV0/maxresdefault.jpg', 'Historia de la Ingeniería', 'La ingeniería ha evolucionado desde las construcciones antiguas hasta las innovaciones modernas.')">
+          <img src="https://i.ytimg.com/vi/gpwBpyj_WV0/maxresdefault.jpg" alt="Historia de la Ingeniería">
+        </div>
+        <div class="image-description">Historia de la Ingeniería</div>
+        <div class="image-box" onclick="openModal('https://grupocarman.com/blog/wp-content/uploads/2019/04/historia-mecanica-1024x768.jpg', 'Historia de la Ingeniería', 'La ingeniería mecánica ha sido clave en el desarrollo industrial.')">
+          <img src="https://grupocarman.com/blog/wp-content/uploads/2019/04/historia-mecanica-1024x768.jpg" alt="Historia de la Ingeniería">
+        </div>
+        <div class="image-description">Historia de la Ingeniería</div>
       </div>
     </section>
 
     <section id="origen">
       <h2>Origen de la Palabra "Ingeniero"</h2>
-      <p>Viene del latín <em>ingenium</em>, que significa "habilidad natural" o "ingenio". Originalmente, se refería a personas con talento para inventar soluciones prácticas.</p>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
+        <div class="image-box" onclick="openModal('https://etimologia.com/foto/historia/ingeniero-robotica.jpg', 'Origen de la Palabra Ingeniero', 'El término ingeniero tiene sus raíces en el latín y evolucionó con el tiempo.')">
+          <img src="https://etimologia.com/foto/historia/ingeniero-robotica.jpg" alt="Origen de la Palabra Ingeniero">
+        </div>
+        <div class="image-description">Origen de la Palabra Ingeniero</div>
       </div>
     </section>
 
     <section id="significado">
       <h2>¿Qué Significa Ser un Ingeniero?</h2>
-      <p>"Para mí, ser un ingeniero significa usar la creatividad y el conocimiento para resolver problemas reales que beneficien a las personas y al planeta."</p>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
+        <div class="image-box" onclick="openModal('https://i.pinimg.com/736x/6d/32/a0/6d32a07850129821c04c347170e96c11.jpg', 'Significado de Ser Ingeniero', 'Ser ingeniero implica creatividad, conocimiento y compromiso con el bienestar social.')">
+          <img src="https://i.pinimg.com/736x/6d/32/a0/6d32a07850129821c04c347170e96c11.jpg" alt="Significado de Ser Ingeniero">
+        </div>
+        <div class="image-description">Significado de Ser Ingeniero</div>
       </div>
     </section>
 
     <section id="funciones">
       <h2>Funciones Principales del Ingeniero</h2>
-      <ul>
-        <li>Diseñar soluciones innovadoras.</li>
-        <li>Supervisar proyectos y asegurar su éxito.</li>
-        <li>Trabajar en equipo y comunicarse efectivamente.</li>
-        <li>Mejorar procesos y productos existentes.</li>
-      </ul>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
+        <div class="image-box" onclick="openModal('https://curriculumya.com/uploads/img/que-hace-ingeniero.jpg', 'Funciones del Ingeniero', 'Los ingenieros diseñan, supervisan y mejoran sistemas y procesos.')">
+          <img src="https://curriculumya.com/uploads/img/que-hace-ingeniero.jpg" alt="Funciones del Ingeniero">
+        </div>
+        <div class="image-description">Funciones del Ingeniero</div>
       </div>
     </section>
 
     <section id="caracteristicas">
       <h2>Características de un Ingeniero</h2>
-      <ul>
-        <li>Creativo e innovador.</li>
-        <li>Responsable y ético.</li>
-        <li>Capacidad de análisis y solución de problemas.</li>
-        <li>Adaptabilidad a nuevos desafíos.</li>
-      </ul>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
+        <div class="image-box" onclick="openModal('https://scontent.fppn2-1.fna.fbcdn.net/v/t39.30808-6/470237167_3032871220186430_7531586987902369727_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WBHXEHZcezMQ7kNvgEW0udT&_nc_oc=Adip0rb2oQLo82trDKS_xk0nMTJQ9CzUOYY_i6tR4cYPhnZ8ue_NfoBNRthqVe8VZNc&_nc_zt=23&_nc_ht=scontent.fppn2-1.fna&_nc_gid=ARR5ffmbS1K2eoCNoOdqzTZ&oh=00_AYCmEHl-BzVsTJGIcREPXDvNu5qmhnN_1wi65BtgNymnVg&oe=67B0E168', 'Características del Ingeniero', 'Un ingeniero debe ser creativo, ético y adaptable a los cambios.')">
+          <img src="https://scontent.fppn2-1.fna.fbcdn.net/v/t39.30808-6/470237167_3032871220186430_7531586987902369727_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=WBHXEHZcezMQ7kNvgEW0udT&_nc_oc=Adip0rb2oQLo82trDKS_xk0nMTJQ9CzUOYY_i6tR4cYPhnZ8ue_NfoBNRthqVe8VZNc&_nc_zt=23&_nc_ht=scontent.fppn2-1.fna&_nc_gid=ARR5ffmbS1K2eoCNoOdqzTZ&oh=00_AYCmEHl-BzVsTJGIcREPXDvNu5qmhnN_1wi65BtgNymnVg&oe=67B0E168" alt="Características del Ingeniero">
+        </div>
+        <div class="image-description">Características del Ingeniero</div>
       </div>
     </section>
 
     <section id="papel">
       <h2>Papel en la Sociedad</h2>
-      <p>Los ingenieros contribuyen al desarrollo sostenible, mejoran la calidad de vida de las comunidades y resuelven problemas globales.</p>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
+        <div class="image-box" onclick="openModal('https://virtual.cuc.edu.co/hs-fs/hubfs/habilidades-clave-de-un-ingeniero-industrial%20.jpg?width=800&height=500&name=habilidades-clave-de-un-ingeniero-industrial%20.jpg', 'Papel en la Sociedad', 'Los ingenieros contribuyen al progreso social y económico.')">
+          <img src="https://virtual.cuc.edu.co/hs-fs/hubfs/habilidades-clave-de-un-ingeniero-industrial%20.jpg?width=800&height=500&name=habilidades-clave-de-un-ingeniero-industrial%20.jpg" alt="Papel en la Sociedad">
+        </div>
+        <div class="image-description">Papel en la Sociedad</div>
       </div>
+      <p>Video relacionado:</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
     <section id="actividades">
       <h2>Actividades y Sectores Económicos</h2>
-      <p>Las actividades principales incluyen diseño, construcción, investigación y mantenimiento, abarcando sectores como tecnología, energía, salud y transporte.</p>
       <div class="image-container">
-        <div class="image-box" onclick="openModal('https://via.placeholder.com/400x600')">Imagen 1</div>
+        <div class="image-box" onclick="openModal('https://micarrerauniversitaria.com/wp-content/uploads/2018/02/Mapa-Mental-1-768x553.jpg', 'Actividades y Sectores Económicos', 'Los ingenieros participan en múltiples actividades económicas.')">
+          <img src="https://micarrerauniversitaria.com/wp-content/uploads/2018/02/Mapa-Mental-1-768x553.jpg" alt="Actividades y Sectores Económicos">
+        </div>
+        <div class="image-description">Actividades y Sectores Económicos</div>
       </div>
+      <p>Video relacionado:</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/abcdef12345" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal" onclick="closeModal()">
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Imagen Ampliada">
+      <div class="modal-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
   </div>
 
   <!-- Pie de página -->
@@ -233,22 +293,22 @@
     <p>Grupo 202456784_35</p>
   </footer>
 
-  <!-- Modal para imágenes -->
-  <div id="modal" class="modal" onclick="closeModal()">
-    <img id="modal-image" src="" alt="Imagen ampliada">
-  </div>
-
-  <!-- Script para manejar el modal -->
   <script>
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
+    function openModal(imageSrc, title, description) {
+      const modal = document.getElementById('myModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
 
-    function openModal(imageSrc) {
-      modal.style.display = 'flex';
       modalImage.src = imageSrc;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+
+      modal.style.display = 'flex';
     }
 
     function closeModal() {
+      const modal = document.getElementById('myModal');
       modal.style.display = 'none';
     }
   </script>
