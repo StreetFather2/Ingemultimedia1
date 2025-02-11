@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Ingeniería: Historia, Significado y Papel en la Sociedad</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #FF5733;
+    }
+
+    /* Menú de navegación */
+    nav {
+      background-color: #FF5733;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Contenido principal */
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #FF5733;
+    }
+
+    section h2 {
+      color: #FF5733;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1rem;
+      color: #cccccc;
+    }
+
+    /* Pie de página */
+    footer {
+      background-color: #000000;
+      color: #cccccc;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Animaciones */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>La Ingeniería: Historia, Significado y Papel en la Sociedad</h1>
+    <p>Explora el origen, evolución y relevancia de la ingeniería en el mundo moderno.</p>
+  </header>
+
+  <!-- Menú de navegación -->
+  <nav>
+    <a href="#historia">Historia de la Ingeniería</a>
+    <a href="#origen">Origen de la Palabra "Ingeniero"</a>
+    <a href="#significado">¿Qué Significa Ser un Ingeniero?</a>
+    <a href="#funciones">Funciones Principales del Ingeniero</a>
+    <a href="#caracteristicas">Características de un Ingeniero</a>
+    <a href="#papel">Papel en la Sociedad</a>
+    <a href="#actividades">Actividades y Sectores Económicos</a>
+  </nav>
+
+  <!-- Contenido principal -->
+  <section id="historia" class="fade-in">
+    <h2>Historia de la Ingeniería</h2>
+    <p>Desde las pirámides de Egipto hasta los avances tecnológicos modernos, la ingeniería ha sido fundamental para el desarrollo humano.</p>
+  </section>
+
+  <section id="origen" class="fade-in">
+    <h2>Origen de la Palabra "Ingeniero"</h2>
+    <p>Viene del latín <em>ingenium</em>, que significa "habilidad natural" o "ingenio". Originalmente, se refería a personas con talento para inventar soluciones prácticas.</p>
+  </section>
+
+  <section id="significado" class="fade-in">
+    <h2>¿Qué Significa Ser un Ingeniero?</h2>
+    <p>"Para mí, ser un ingeniero significa usar la creatividad y el conocimiento para resolver problemas reales que beneficien a las personas y al planeta."</p>
+  </section>
+
+  <section id="funciones" class="fade-in">
+    <h2>Funciones Principales del Ingeniero</h2>
+    <ul>
+      <li>Diseñar soluciones innovadoras.</li>
+      <li>Supervisar proyectos y asegurar su éxito.</li>
+      <li>Trabajar en equipo y comunicarse efectivamente.</li>
+      <li>Mejorar procesos y productos existentes.</li>
+    </ul>
+  </section>
+
+  <section id="caracteristicas" class="fade-in">
+    <h2>Características de un Ingeniero</h2>
+    <ul>
+      <li>Creativo e innovador.</li>
+      <li>Responsable y ético.</li>
+      <li>Capacidad de análisis y solución de problemas.</li>
+      <li>Adaptabilidad a nuevos desafíos.</li>
+    </ul>
+  </section>
+
+  <section id="papel" class="fade-in">
+    <h2>Papel en la Sociedad</h2>
+    <p>Los ingenieros contribuyen al desarrollo sostenible, mejoran la calidad de vida de las comunidades y resuelven problemas globales.</p>
+  </section>
+
+  <section id="actividades" class="fade-in">
+    <h2>Actividades y Sectores Económicos</h2>
+    <p>Las actividades principales incluyen diseño, construcción, investigación y mantenimiento, abarcando sectores como tecnología, energía, salud y transporte.</p>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Diseñado por [Tu Nombre o Equipo]</p>
+    <p>Iconos de <a href="https://fontawesome.com/" target="_blank">FontAwesome</a></p>
+  </footer>
+
+  <!-- Script para animaciones -->
+  <script>
+    // Animación de entrada para cada sección
+    const sections = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
